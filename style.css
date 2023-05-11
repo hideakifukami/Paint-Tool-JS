@@ -1,0 +1,81 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #e1eea6;
+}
+
+.header {
+    width: 100%;
+    height: 80px;
+    background-color: #e997b2;
+    border: 1px solid lightblue;
+    border-radius: 8px;
+    box-shadow: 5px 10px 10px rgb(0,0,0,0.2);
+}
+
+.header h1 {
+    color: white;
+    font-size: 27px;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.toolsContainer {
+    box-shadow: 8px 10px 15px rgb(0,0,0,0.2);
+    background-color: white;
+    margin: 20px;
+    padding: 20px 5px;
+    text-align: center;
+}
+
+#canvas {
+    box-shadow: 8px 10px 15px rgb(0,0,0,0.2);
+    background-color: white;
+    margin: 20px;
+}
+
+button {
+    background-color: none;
+    transition: .3s;
+}
+
+.toolsContainer .icon button:focus{
+    border-radius: 15%;
+    background-color: aliceblue;
+    box-shadow: 2px 6px 10px rgb(0,0,0,0.2);
+    animation: anime-shadow .3s forwards;
+}
+
+.toolsContainer .icon {
+    margin: 0 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    transition: 0.4s cubic-bezier(0.68,-0.55,0.265,1.55);
+}
+
+@keyframes anime-shadow{
+    180%{
+        box-shadow: 2px 6px 10px rgb(0,0,0,0.2);
+    }
+}
+
+.toolsContainer h4 {
+    margin-top: 10px;
+}

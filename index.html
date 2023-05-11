@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint Tool APP</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/28e5fa47e4.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header>
+        <div class="header" id="header">
+            <h1>Amigos do Bairro ZL - Paint Tool APP</h1>
+        </div>
+    </header>
+
+    
+
+    <div class="container">
+        
+        <div class="toolsContainer">
+            <div class="icon color">
+                <div class="tool">
+                    <h4>Select</h4>
+                </div>
+                <span><i><input type="color" id="colorChange"></i></span>
+            </div>
+
+            <div class="icon size">
+                <div class="tool">
+                    <h4>Pen Size</h4>
+                </div>
+                <span><i><input type="range" id="penSize" step="2" min="2" max="150" value="5"></i></span>
+            </div>
+
+            <div class="icon pencil">
+                <div class="tool">
+                    <h4>Pencil</h4>
+                </div>
+                <button  id="btnPencil">
+                <span><i class="fa fa-pencil-alt"></i></span>
+                </button>
+            </div>
+        
+            <div class="icon bucket">
+                <div class="tool">
+                    <h4>Fill</h4>
+                </div>
+                <button  id="btnBucket">
+                <span><i class="fa fa-fill-drip"></i></span>
+                </button>
+            </div>
+
+            <div class="icon eraser">
+                <div class="tool">
+                    <h4>Eraser</h4>
+                </div>
+                <button  id="btnEraser">
+                <span><i class="fa fa-eraser"></i></span>
+                </button>
+            </div>
+        
+            <div class="icon clear">
+                <div class="tool">
+                    <h4>Clear</h4>
+                </div>
+                <button  id="btnClear">
+                <span><i class="fa fa-broom"></i></span>
+                </button>
+            </div>
+
+            <div class="icon undo">
+                <div class="tool">
+                    <h4>Undo</h4>
+                </div>
+                <button  id="btnUndo">
+                <span><i class="fa fa-undo"></i></span>
+                </button>
+            </div>
+        </div>
+        
+        <canvas id="canvas"></canvas>
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
