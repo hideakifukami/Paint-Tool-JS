@@ -3,7 +3,6 @@ let restore_array=[];
 let index=-1;
 let coord = {x:0, y:0};
 
-
 window.onload = function() {
     // Canvas
     let canvas = document.getElementById("canvas");
