@@ -94,3 +94,17 @@ button {
 .toolsContainer h4 {
     margin-top: 10px;
 }
+
+.image-library {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .image-library img {
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    cursor: pointer;
+    /* Estilos adicionais para as miniaturas de imagem */
+  }
+  

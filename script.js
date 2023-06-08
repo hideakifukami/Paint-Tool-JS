@@ -2,8 +2,12 @@ let painting = false;
 let restore_array=[];
 let index=-1;
 let coord = {x:0, y:0};
+let imagemEscolhida = 1;
+
+
 
 window.onload = function() {
+    
     // Canvas
     
     let canvas = document.getElementById("canvas");
@@ -12,11 +16,31 @@ window.onload = function() {
     let canvasImg = document.getElementById("canvas-img");
     let ctxImg = canvasImg.getContext("2d");
     let img = new Image();
-    img.src = 'assets/img/paint-book-1.png';
+    img.src = 'assets/img/paint-book-' + imagemEscolhida + '.png';
     img.onload = function () {
+        ctxImg.fillStyle='white';
+        ctxImg.clearRect(0, 0, canvas.width, canvas.height);
         ctxImg.drawImage(img, 50, 20, canvas.width - 50, img.height * canvas.width / img.width);
     }
     
+    // Obtém todas as miniaturas de imagem
+    var thumbnails = document.querySelectorAll('.image-library img');
+
+    // Adiciona um manipulador de eventos de clique em cada miniatura de imagem
+    thumbnails.forEach(function(thumbnail) {
+    thumbnail.addEventListener('click', function() {
+    // Obtém o valor associado à miniatura de imagem clicada
+    var value = this.getAttribute('data-value');
+    
+    // Define o valor selecionado no input oculto
+    document.getElementById('selected-value').value = value;
+    
+    imagemEscolhida = value;
+    
+    img.src = 'assets/img/paint-book-' + imagemEscolhida + '.png';
+
+        });
+    });
 
     ctx.canvas.width = window.innerWidth - 300;
     ctx.canvas.height = window.innerHeight - 100;
@@ -43,7 +67,7 @@ window.onload = function() {
 
     // coordinates of cursor
     function getPos(event){
-        coord.x=event.pageX - 280;
+        coord.x=event.pageX - 300;
         coord.y=event.pageY - 100;
     }
 
