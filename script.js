@@ -5,16 +5,30 @@ let coord = {x:0, y:0};
 
 window.onload = function() {
     // Canvas
+    
     let canvas = document.getElementById("canvas");
     let ctx = canvas.getContext("2d");
+
+    let canvasImg = document.getElementById("canvas-img");
+    let ctxImg = canvasImg.getContext("2d");
+    let img = new Image();
+    img.src = 'assets/img/paint-book-1.png';
+    img.onload = function () {
+        ctxImg.drawImage(img, 0, 0);
+    }
+    
+
     ctx.canvas.width = window.innerWidth - 300;
     ctx.canvas.height = window.innerHeight - 100;
+    ctxImg.canvas.width = window.innerWidth - 300;
+    ctxImg.canvas.height = window.innerHeight - 100;
 
     // styling line
     ctx.strokeStyle="black";
     ctx.lineJoin="round";
     ctx.lineWidth=1;
     ctx.lineCap='round';
+
 
     // called when mousemoves
     function draw(event){
@@ -29,8 +43,8 @@ window.onload = function() {
 
     // coordinates of cursor
     function getPos(event){
-        coord.x=event.pageX- canvas.offsetLeft;
-        coord.y=event.pageY- canvas.offsetTop;
+        coord.x=event.pageX - 280;
+        coord.y=event.pageY - 100;
     }
 
     // called when mousedown
@@ -56,15 +70,15 @@ window.onload = function() {
     }
 
     // eventlisteners
-
+   
     canvas.addEventListener('touchstart',startPos);
     canvas.addEventListener('touchmove',draw);
     canvas.addEventListener('touchend',endPos);
 
-    canvas.addEventListener('mousedown',startPos);
-    canvas.addEventListener('mouseup',endPos);
-    canvas.addEventListener('mousemove',draw);
-    canvas.addEventListener('mouseout',endPos);
+    canvasImg.addEventListener('mousedown',startPos);
+    canvasImg.addEventListener('mouseup',endPos);
+    canvasImg.addEventListener('mousemove',draw);
+    canvasImg.addEventListener('mouseout',endPos);
 
 
 

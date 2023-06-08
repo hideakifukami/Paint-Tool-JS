@@ -40,10 +40,25 @@ body {
     text-align: center;
 }
 
+.container-canvas {
+    position: relative;
+}
+
+.canvas-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 20px;
+}
+
 #canvas {
     box-shadow: 8px 10px 15px rgb(0,0,0,0.2);
     background-color: white;
     margin: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -9999;
 }
 
 button {
