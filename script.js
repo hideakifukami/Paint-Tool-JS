@@ -14,7 +14,7 @@ window.onload = function() {
     let img = new Image();
     img.src = 'assets/img/paint-book-1.png';
     img.onload = function () {
-        ctxImg.drawImage(img, 0, 0);
+        ctxImg.drawImage(img, 50, 20, canvas.width - 50, img.height * canvas.width / img.width);
     }
     
 
